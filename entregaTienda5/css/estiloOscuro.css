@@ -1,0 +1,351 @@
+ :root{
+    --color--primary:#021b11;
+    --color--details:#1f1f1f;
+    --color--actions:#579e5a;
+    --color--inform:#e6e6e6;
+    --color--backdrop:#173419;
+    --light--shawdow:#888888;
+    --dark--shadow:#000000e2;
+    --darkest-shadow:#ffffff;
+    --error:#ff0000;
+    --color-secondary:#4c845f;
+    --color-user-space:#cfcfcf;
+    --text-light:#ffffff;
+    --text-dark:#000000;
+    --color-animacion: #ffffffb0;
+ }
+
+
+html {
+    /* Ocupa el 100% de la altura de la ventana */
+    height: 100%; 
+}
+/*ESTILOS DEL LOGIN*/
+#bodyLogin {
+    display: flex;
+    justify-content: center;    /* centra horizontalmente */
+    align-items: center;        /* centra verticalmente */
+    min-height: 100vh;          /* ocupa toda la altura de la ventana */
+    margin: 0;                  /* elimina márgenes por defecto */
+    background-image: url('../img/imagenFondoLogin.jpg');  /* opcional: color de fondo */
+    background-repeat: no-repeat;      /* no repetir */
+    background-size: cover;
+}
+.body{
+/* Ocupa el 100% de la altura del HTML */
+    min-height: 100%; 
+    background-color: var(--color--backdrop);
+    /* 1. Activa Flexbox */
+    display: flex; 
+    
+    /* 2. Organiza verticalmente */
+    flex-direction: column; 
+    color: var(--text-light);
+    
+    margin: 0; /* Elimina márgenes por defecto */
+
+}
+
+
+#descripcionP{
+color: var(--text-light);
+}
+.formLogin{
+    width: 50%;          /* antes: 500px -> ahora 50% del contenedor */
+    max-width: 500px;    /* opcional: no superar 500px en pantallas grandes */
+    height: 60vh;        /* altura relativa (60% de la altura de la ventana) */
+    max-height: 500px; 
+    background-color:var(--color--details);
+    margin: auto;
+    border-radius: 14px;
+    box-shadow: 5px 10px 18px var(--light--shawdow);
+    padding: 20px;
+    
+}
+.logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+.formLogin div{
+        display: block;
+        margin: auto;
+        text-align: left;
+        padding: 0%;
+    
+    }
+
+
+.formLogin input{
+    display: block;
+    margin: auto;
+    width: 90%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border:var(--light--shawdow) 1px solid;
+    background-color: var(--color-user-space);
+}
+
+.formLogin label {
+    /* 1. La clave: Convierte el elemento en bloque */
+    display: block; 
+    width: 90%;
+    /* 2. Opcional: Añade un poco de espacio debajo del texto de la etiqueta para separarlo del campo */
+    margin: auto;
+    margin-top: 20px;
+    color: var(--text-light);
+    /* 3. Asegura la alineación horizontal izquierda */
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#submit{
+    width: 90%;
+    background-color: var(--color--actions);
+    color: var(--text-light);
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    border: none;
+    border-radius: 20px;
+    box-shadow:var(--light--shawdow) 2px 2px 5px;
+
+}
+
+.error-message {
+    color: var(--error);
+    text-align: center;
+    margin: 10px auto;
+    font-weight: bold;
+}
+ 
+ 
+/*ESTILOS CATALOGO Y PRODUCTOS*/ 
+ 
+ /* Estilo para que toda la tarjeta sea clickable y muestre puntero */
+            .producto-card {
+                cursor: pointer; 
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+            .producto-card:hover {
+                transform: translateY(-5px); /* Pequeño efecto hover */
+                box-shadow: 0 4px 8px var(--color-animacion) !important;
+            }
+            .container{
+                padding: 20px;
+                color: black;
+            }
+
+
+
+#datosCategoria h1, p{
+color: var(--text-light);
+}
+
+#contenedorBloqueDatos{
+color: var(--text-light);
+flex-grow: 1;
+}
+
+
+#titulo{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: var(--text-light);
+
+}
+#productoEspecificoImagen{
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px var(--dark--shadow);
+}
+
+
+/***************ESTILOS CARRITO***********************************************/
+
+/***contenido principal de carrito***/
+.contenido-principal {
+    /* Hace que el contenido crezca para ocupar todo el espacio extra */
+    flex-grow: 1; 
+}
+
+
+
+/*ESTILOS CABECERA*/
+#cabeceraNavegacion{
+    display: flex;
+    /* Separa la imagen/logo (si lo hubiera) del contenedor #acciones */
+    justify-content: space-between; 
+    /* Alinea verticalmente los elementos principales */
+    align-items: center; 
+    background-color: var(--color--primary);
+    /* Se recomienda min-height si la imagen no define una altura */
+    min-height: 60px; 
+    height: 80px;
+    border: 1px solid var(--color--details);
+}
+
+/* 🔑 Contenedor principal de la derecha */
+#acciones{
+    display: flex;
+    /* Controla la distancia entre #enlacesNav y #datosUsuario */
+    /* Permite que los elementos hijos se estiren a la altura de #acciones */
+    margin-left: auto;
+    height: max-content;
+    height: 100%;
+} 
+
+/* Contenedor de los enlaces */
+#enlacesNav {
+    display: flex;
+    /* Espacio entre los enlaces individuales */
+    gap: 15px;
+    /* Alinea los textos de los enlaces verticalmente */
+    align-items: center;
+    padding: 5%;
+
+}
+
+/* 🔑 Elemento de los datos del usuario */
+#datosUsuario{
+    display: flex;
+    /* align-self: stretch lo estira para ocupar toda la altura de #acciones (gracias a align-items: stretch en #acciones) */
+    background-color:var(--color--primary);
+    padding: 0 10px; /* Agrega padding horizontal para que el texto no se pegue al borde */
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+}
+
+.contenedorIcono{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color--actions);
+   width: 40px; 
+    height: 40px; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px black;
+    
+    /* Añadir animación suave de subida y sombra con su duracion para que luego vuelva a su estado normal*/
+    transition: transform 0.2s, box-shadow 0.2s; 
+
+    
+    cursor: pointer; /* cambia el cursor a una mano */
+}
+
+.contenedorIcono:hover {
+  transform: translateY(-4px) !important; /*mueve el elemento hacia arriba y hacemos lo del important por si acaso bootstrap hace de las suyas*/
+    
+    /* Aumenta mucho más la sombra para el efecto de "flotación" */
+    box-shadow: 0 10px 20px black;
+}
+.contenedorIcono a{
+    display: flex;
+ width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorIcono img{
+    width: 24px;
+    height: 24px;
+    /* Asegura que la imagen no se estire */
+    object-fit: contain;
+}
+
+
+/*Media quearies basicamente estos solo se aplican cuando la pantalla es más pequeña, asi controlamos que sea responsive la cabecera*/
+@media (max-width: 768px) {
+    /* 1. Reduce el tamaño del texto de usuario */
+    #datosUsuario {
+        font-size: 0.9em;
+        padding: 0 5px; /* Reduce aún más el padding */
+    }
+
+    /* 2. Reduce el tamaño de los iconos y su contenedor */
+    .contenedorIcono {
+        width: 35px; /* De 40px a 35px */
+        height: 35px;
+    }
+    .contenedorIcono img {
+        width: 20px; /* De 24px a 20px */
+        height: 20px;
+    }
+
+    /* 3. Reduce el espacio entre elementos */
+    #enlacesNav {
+        gap: 5px; /* Reduce el espacio entre botones */
+    }
+}
+
+/*ESTILOS LOGOUT*/
+#contenedorDespedida{
+max-width: 500px; /* Tamaño máximo deseado para la caja */
+    width: 90%; /* Ocupa el 90% del ancho del padre hasta 500px */
+    
+    /* 🔑 Aumenta el padding para hacer la caja más GRANDE */
+    padding: 40px; 
+    
+    /* Fondo y Sombra */
+    background-color: var(--color--inform); /* Color de fondo claro, para contraste */
+    border-radius: 10px; /* Hacemos el radio más sutil */
+    box-shadow: 0 8px 16px var(--darkest-shadow); /* Sombra más pronunciada */
+    
+    /* Centra el texto y enlaces dentro de la caja */
+    text-align: center;
+}
+
+
+
+
+    #contenedorDespedida p {
+    font-size: 1.2em; /* Hace el mensaje un poco más grande */
+    margin-bottom: 20px;
+}
+#AccionDespedia {
+    /* Quitamos width y height en 100% para que se ajuste al contenido */
+    display: inline-block; /* Permite controlar el ancho y la forma */
+    background-color: var(--color--actions);
+    padding: 10px 25px; /* Añade relleno para que el botón sea grande */
+    
+    /* 🔑 CLAVE: Hace los bordes completamente redondeados (forma de píldora) */
+    border-radius: 999px; 
+    
+    /* Sombra opcional para darle un poco de relieve */
+    box-shadow: 0 2px 4px var(--darkest-shadow);
+}
+
+#AccionDespedia a {
+    text-decoration: none;
+    color: var(--text-light); /* Cambié a blanco para que contraste con el fondo verde */
+    font-weight: bold;
+    display: block; /* Hace que el enlace ocupe todo el espacio del contenedor */
+}
+
+/**ESTILOS DE FOOTER**/
+footer {
+    background-color: var(--color-secondary); /* Color oscuro */
+    font-size: 0.9em;
+}
+
+/* Estilo para los enlaces de Bootstrap */
+footer a {
+    text-decoration: none;
+    transition: color 0.3s;
+    color: var(--text-dark);
+}
+
+footer p{
+    color: var(--text-dark);
+}
+
+footer a:hover {
+   color: rgb(255, 255, 255) !important; /* Resalta el enlace al pasar el ratón */
+}
+
+
+
